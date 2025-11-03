@@ -1353,7 +1353,8 @@ export type NodePropertyTypes =
 	| 'filter'
 	| 'assignmentCollection'
 	| 'credentials'
-	| 'workflowSelector';
+	| 'workflowSelector'
+	| 'ParameterInputFileUpload';
 
 export type CodeAutocompleteTypes = 'function' | 'functionItem';
 

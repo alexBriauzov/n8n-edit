@@ -41,6 +41,7 @@ import ResourceLocator from './ResourceLocator/ResourceLocator.vue';
 import SqlEditor from '@/features/shared/editors/components/SqlEditor/SqlEditor.vue';
 import TextEdit from './TextEdit.vue';
 import WorkflowSelectorParameterInput from './WorkflowSelectorParameterInput/WorkflowSelectorParameterInput.vue';
+import ParameterInputFileUpload from './ParameterInputFileUpload.vue';
 
 import {
 	formatAsExpression,
@@ -1017,6 +1018,7 @@ function onUpdateTextInput(value: string) {
 
 const onUpdateTextInputDebounced = debounce(onUpdateTextInput, { debounceTime: 200 });
 
+
 async function optionSelected(command: string) {
 	const prevValue = props.modelValue;
 
@@ -1638,6 +1640,10 @@ onUpdated(async () => {
 					@focus="setFocus"
 					@blur="onBlur"
 				/>
+			</div>
+
+			<div v-else-if="parameter.type === 'ParameterInputFileUpload'" ref="inputField" class="color-input">
+
 			</div>
 
 			<ElDatePicker
